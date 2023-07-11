@@ -1,0 +1,370 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color:white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+header{
+    width: 80%;
+    height: 40vh;
+    overflow: hidden;
+    padding-bottom: 350px;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    padding: 10px ;
+    justify-content: space-between;
+    position: fixed;
+    transition: background 1s;
+    z-index: 1;
+}
+
+nav .logo{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+   
+}
+
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    color:black;
+    padding-right: 20px;
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-weight: 800;
+    color:black;
+}
+nav:hover{
+    background:black;
+
+}
+nav:hover  ul li{
+    color: white;
+}
+
+nav:hover .logo{
+    color: white;
+}
+nav:hover ul li a{
+    color:white;
+    
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color:lightskyblue;
+    position: relative;
+    bottom: -2px;
+    left: 0;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+nav ul li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+
+section {
+    padding-top: 100px;
+    padding-bottom:100px;
+    min-height: 50vh;
+    margin: 50px;
+    
+    
+}
+
+
+
+
+.intro{
+    width: 1400px; 
+    height: 800px; 
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    font-weight: 700;
+    background:linear-gradient(rgba(4, 225, 241, 0.5),rgba(8, 8, 239, 0.5));
+    
+
+
+}
+
+
+#introtext{
+    position: absolute; 
+    top: 60%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: slidedown 1s linear forwards;
+    animation-delay: 1s;
+    
+    
+
+}
+
+#img1 {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%; 
+
+}
+
+#about{
+    margin: 50px;
+}
+
+
+#Skills h1{
+    text-align: center;
+}
+
+#t1{
+    text-align: center;
+}
+.ab{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-container{
+    display: inline-block;
+    width: 30%; 
+    height: 200px;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 1s;
+}
+.details {
+    display: inline-block;
+    width: 60%;
+    height: auto;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 1s;
+}
+
+#Skills{
+    margin: 50px;
+}
+
+
+.sk{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.image1{
+    display: inline-block;
+    width: 30%; 
+    height: 400px;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 2s;
+}
+.skill-container{
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    padding-right: 80px;
+    animation: slideleft 1s linear forwards;
+    animation-delay:2s;
+}
+
+footer{
+    padding: 40px 20px;
+    background-color:black;
+}
+
+.footer h2{
+    text-align: center;
+    color: white;
+    
+}
+
+.footer p{
+    text-align: center;
+    color: white;
+}
+@keyframes slideleft{
+    0%{
+        transform: translate(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes slidedown{
+    0%{
+        transform: translate(-50%,-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(-50%,505);
+        opacity: 1;
+    }
+}
+
+
+
+.project-container{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+
+}
+
+#img3{
+    border-radius: 50%;
+
+}
+.image2{
+    display: inline-block;
+    width: 30%; 
+    height: auto;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 3s;
+
+}
+
+.pro{
+    display: inline-block;
+    width: 60%;
+    height: auto;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 3s;
+}
+
+.project-container2{
+    width: 100%;
+    display: flex;
+    padding-top: 20px;
+    overflow: hidden;
+    justify-content: center;
+
+}
+
+#img4{
+    border-radius: 50%;
+
+}
+.image3{
+    display: inline-block;
+    width: 20%; 
+    padding-left: 40px;
+    height: auto;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 3s;
+
+}
+
+.pro2{
+    display: inline-block;
+    width: 60%;
+    padding-right: 40px;
+    height: auto;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 3s;
+}
+
+.project-container3{
+    width: 100%;
+    display: flex;
+    padding-top: 40px;
+    overflow: hidden;
+    justify-content: center;
+
+}
+
+#img5{
+    border-radius: 50%;
+
+}
+.image4{
+    display: inline-block;
+    width: 20%; 
+    padding-right: 40px;
+    height: auto;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 3s;
+
+}
+
+.pro3{
+    display: inline-block;
+    width: 60%;
+    padding-left: 40px;
+    height: auto;
+    animation: slideleft 1s linear forwards;
+    animation-delay: 3s;
+}
+
+
+.addres{
+    width: 100%;
+    display: flex;
+    padding-top: 40px;
+    overflow: hidden;
+    justify-content: center;
+    
+
+}
+.ad{
+    width:50%;
+}
+.social{
+    width:50%;
+}
+.add{
+    width: 100%;
+    display: flex;
+    padding-top: 40px;
+    overflow: hidden;
+    justify-content: center;
+    
+
+}
+.mail{
+    width:50%;
+}
+.phn{
+    width:50%;
+}
+
+
+
