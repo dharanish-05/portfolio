@@ -366,5 +366,39 @@ footer{
     width:50%;
 }
 
+@media only screen and (max-width: 768px) {
+    nav ul li {
+      margin: 5px 10px;
+    }
+    
+    #about,
+    #Skills {
+      margin: 20px;
+    }
+    
+    .image-container,
+    .details,
+    .image1,
+    .skill-container,
+    .image2,
+    .pro,
+    .image3,
+    .pro2,
+    .image4,
+    .pro3 {
+      width: 100%;
+    }
+    
+    footer {
+      padding: 20px;
+    }
+    
+    .ad,
+    .social,
+    .mail,
+    .phn {
+      width: 100%;
+    }
+}
 
 
