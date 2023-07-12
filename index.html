@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>PortFolio</title>
         <link rel="stylesheet" href="/static/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -22,13 +23,41 @@
                         <li><a href="#con">Contact Me</a></li>
                     </ul>
                 </nav>
+                <nav class="navbar">
+                    <div class="logo">
+                        <span>Dharanishwar</span>
+                    </div>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn"><i class="fa-sharp fa-solid fa-bars" style="color: black;" 
+                            onmouseover="this.style.color = 'white';" onmouseout="this.style.color = 'black';"></i></i></a>
+                            <div class="dropdown-content">
+                                <a href="#" class="h">Home</a>
+                                <a href="#about">About</a>
+                                <a href="#Skills">Skills</a>
+                                <a href="#Projects">Projects</a>
+                                <a href="#con">Contact Me</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>  
             </div>   
         </header>
         <div class="intro">
+            <div>
                 <h1 id="introtext" style=" font-size: x-large;">Hi,
                 <br>I'am <span style="color:darkblue">Dharanishwar Bondugula</span> <br>A Computer Science Engineer Specialization
                 <br>In Artificial Intelligence and Machine Learning<br><span class="btn"><a href="#about">Know More</a></li>
-                </span></h1>         
+                </span></h1>
+            </div>         
+        </div> 
+        <div class="intro1">
+            <div>
+                <h1 id="introtext1" style=" font-size: x-large;">Hi,
+                <br>I'am <span style="color:darkblue">Dharanishwar Bondugula</span> <br>A Computer Science Engineer Specialization
+                <br>In Artificial Intelligence and Machine Learning<br><span class="btn"><a href="#about">Know More</a></li>
+                </span></h1>
+            </div>         
         </div>       
         <section id="about">
             <h1 style="text-align: center;">ABOUT</h1>
@@ -58,7 +87,7 @@
             <div class="sk">
                 <div class="skill-container">
                     <h3 style="font-size: xx-large;">Professional Skills</h3>
-                    <p>I have expertised in Python,java,html,css,Machine Learning.I am very good <br>
+                    <p>I have expertised in Python,java,html,css,Machine Learning.I am very good
                     at solving Problems and logic Building ,use my skills efficiently and try to think out of box
                     to give best possible solution. </p>
                     
@@ -115,7 +144,7 @@
                 </div>
             </div>
         </section>
-        <section clss="contact" id="con">
+        <section class="contact" id="con">
             <div class="contactme">
                 <h1 style="text-align: center;">CONTACT</h1>
             </div>
