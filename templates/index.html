@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>PortFolio</title>
@@ -7,7 +8,15 @@
   
         
     </head>
-    <script src="script.js"></script>
+    <script>
+        function startListening() {
+            var output = document.getElementById('output');
+            output.innerHTML = 'Listening...';
+
+            fetch('/take_command')
+            
+        }
+    </script>
     <body>
         <header>
             <div class="header">
@@ -47,7 +56,7 @@
             <div>
                 <h1 id="introtext" style=" font-size: x-large;">Hi,
                 <br>I'am <span style="color:darkblue">Dharanishwar Bondugula</span> <br>A Computer Science Engineer Specialization
-                <br>In Artificial Intelligence and Machine Learning<br><span class="btn"><a href="#about">Know More</a></li>
+                <br>In Artificial Intelligence and Machine Learning<br><span class="btn"><a href="/take_command">Know More</a></li>
                 </span></h1>
             </div>         
         </div> 
