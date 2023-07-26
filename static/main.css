@@ -398,16 +398,25 @@ footer{
         visibility: visible;
         
     }
-    
+    .dropbtn i {
+        color:black;
+      }
+
+    .navbar:hover .dropbtn i {
+        color: white;
+      }
     .dropbtn {
         display: inline-block;
         cursor: pointer;
         padding-right: 50px;
     }
+    .fa-button :hover{
+            color: white;
+    }
     .dropdown-content {
         display: none;
-        position:absolute;
-        right:-10% ;
+        position:fixed;
+        right:-5% ;
         background-color: black;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

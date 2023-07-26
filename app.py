@@ -5,30 +5,39 @@ import webbrowser
 import datetime 
 import wikipedia
 
+
 app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('index.html')
-
+silence_count=0
 def takeCommand():
+    global silence_count
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print('Listening')
-        r.pause_threshold = 0.5
+        r.pause_threshold = 1
         audio = r.listen(source)
         try:
             print("Recognizing")
             Query = r.recognize_google(audio, language='en-in')
-            print("the command is", Query)    
+            print("the command is", Query) 
+            silence_count=0   
         except Exception as e:
-            print(e)
-            speak("Say that again sir")
-            return "None"
+            if silence_count == 2:
+                speak("looks like you want me to shut down ok signing off")
+                return "close"
+            else:
+                print(e)
+                speak("Say that again sir")
+                silence_count+=1
+                return "None"
         return Query
 def speak(audio):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[1].id)
+    engine.setProperty('rate', 150)
     engine.say(audio) 
     engine.runAndWait()
 def tellDay():
@@ -48,18 +57,16 @@ def tellTime():
     min = time[14:16]
     speak( "The time is sir" + hour + "Hours and" + min + "Minutes")   
 def Hello():
-    speak("hello sir I am  dharanishwar's virtual assistant , i will help you to know about him")
+    speak("hello sir I am  cookie dharanishwar's virtual assistant , i will help you to know about him")
 def Take_query():
     Hello()
     while(True):
         query = takeCommand().lower()
         if "about dharan ishwar" in query:
-            speak("""Dharanishwar is A student majoring in Computer Science Engineering with Artificial Intelligence 
-                  ` and Machine Learning,He is an undergraduate student, currently pursuing  Bachelor of Technology.
-                    He is a self-starter with strong interpersonal skills.He works efficiently both as an individual
-                    contributor as well as along with a team.
-                    He is a good learner, innovative,he has a positive attitude and committment to his work.
-                    """)      
+            speak("""Dharanishwar was born on 5th of march 2003 .He is an undergraduate student pursuing his Bachelor of Technology in Computer Science Engineering with Artificial Intelligence and Machine Learning from Vardhaman college of engineering.
+                    He is a self-starter with strong interpersonal skills and confidence.He works efficiently both as an individual contributor as well as along with a team.
+                    He is a good learner, innovative, has a very positive attitude and committment to his work.
+                    """)     
         elif "open google" in query:
             speak("Opening Google ")
             webbrowser.open("www.google.com")         
@@ -77,8 +84,19 @@ def Take_query():
             speak("According to wikipedia")
             speak(result)
         elif "tell me your name" in query:
-            speak("I am Jarvis. Your desktop Assistant")
-
+            speak("I am Cookie. Dharanishwar's personal assistant ")
+        elif "who are you" in query:
+            speak("I am Cookie. Dharanishwar's personal assistant ")
+        elif "what are you" in query:
+            speak("I am Cookie. Dharanishwar's personal assistant ")
+        elif "how to stop you" in query:
+            speak("say see you")
+        elif "none" in query:
+            speak("")
+        elif "close" in query:
+            return True
+        else:
+            speak("sorry! I am not familiar with that, please try another.")
 
 
 @app.route('/take_command')
