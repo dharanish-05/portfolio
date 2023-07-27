@@ -20,12 +20,12 @@ def takeCommand():
         audio = r.listen(source)
         try:
             print("Recognizing")
-            Query = r.recognize_google(audio, language='en-in')
+            Query = r.recognize_google(audio, language='en-IN')
             print("the command is", Query) 
             silence_count=0   
         except Exception as e:
             if silence_count == 2:
-                speak("looks like you want me to shut down ok signing off")
+                speak("looks like you want me to shut down!!.ok signing off")
                 return "close"
             else:
                 print(e)
@@ -93,7 +93,7 @@ def Take_query():
             speak("say see you")
         elif "none" in query:
             speak("")
-        elif "close" in query:
+        elif "shutdown" in query:
             return True
         else:
             speak("sorry! I am not familiar with that, please try another.")
